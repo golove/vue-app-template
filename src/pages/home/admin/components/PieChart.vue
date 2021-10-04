@@ -1,8 +1,8 @@
 <template>
   <div
     id="homePieCharts"
-    :class="className"
-    :style="{height: height, width: width}"
+    class="chart"
+    :style="{height: '300px', width:  '100%'}"
   />
 </template>
 
@@ -11,22 +11,7 @@ import { defineComponent, onActivated, onBeforeUnmount, onDeactivated, onMounted
 import resize from '../../../../components/charts/mixins/resize'
 import { init, EChartsOption } from 'echarts'
 export default defineComponent({
-  props: {
-    className: {
-      type: String,
-      default: 'chart'
-    },
-    width: {
-      type: String,
-      default: '100%',
-      required: true
-    },
-    height: {
-      type: String,
-      default: '300px',
-      required: true
-    }
-  },
+
   setup() {
     const {
       mounted,
@@ -79,11 +64,6 @@ export default defineComponent({
     })
 
     onBeforeUnmount(() => {
-      // if (!chart.value) {
-      //   return
-      // }
-      // chart.value.dispose()
-      // chart.value = null
       beforeDestroy()
     })
 

@@ -32,7 +32,7 @@
         :lg="8"
       >
         <div class="chart-wrapper">
-          <BarChart />
+          <BarCharts />
         </div>
       </el-col>
     </el-row>
@@ -80,6 +80,7 @@
         style="padding-right:8px;margin-bottom:30px;"
       >
         <BoxCard style="border-radius: 8px;" />
+        <!-- <personal /> -->
       </el-col>
     </el-row>
   </div>
@@ -91,12 +92,15 @@ import GithubCorner from '../../../components/github-corner/Index.vue'
 import PanelGroup from './components/PanelGroup.vue'
 import LineChart from './components/LineChart.vue'
 import PieChart from './components/PieChart.vue'
-import BarChart from './components/BarChart.vue'
+import BarCharts from './components/backup.vue'
+// import BarChart from './components/BarChart.vue'
+// import personal from '../../personal/index.vue'
+import RadarChart from './components/RadarChart.vue'
 import DependsTable from './components/DependsTable.vue'
 import TodoList from './components/todo-list/Index.vue'
 import BoxCard from './components/BoxCard.vue'
 import UpdateTimeline from './components/UpdateTimeline.vue'
-import RadarChart from './components/RadarChart.vue'
+
 export default {
   components: {
     GithubCorner,
@@ -107,8 +111,9 @@ export default {
     PanelGroup,
     LineChart,
     PieChart,
-    BarChart,
-    RadarChart
+    BarCharts,
+    RadarChart,
+    // personal
   },
   setup() {
     const data = {
@@ -158,7 +163,7 @@ export default {
 
   .chart-wrapper {
     background: #fff;
-    padding: 16px 16px 0;
+    padding: 16px 16px;
     margin-bottom: 32px;
     border-radius: 8px;
   }

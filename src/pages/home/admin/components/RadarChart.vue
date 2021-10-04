@@ -2,8 +2,8 @@
 <template>
   <div
     id="homeRadarCharts"
-    :class="className"
-    :style="{height: height, width: width}"
+    class="chart"
+    :style="{height:  '300px', width: '100%'}"
   />
 </template>
 <script lang="ts">
@@ -13,22 +13,7 @@ import { init } from 'echarts'
 
 const animationDuration = 3000
 export default defineComponent({
-  props: {
-    className: {
-      type: String,
-      default: 'chart'
-    },
-    width: {
-      type: String,
-      default: '100%',
-      required: true
-    },
-    height: {
-      type: String,
-      default: '300px',
-      required: true
-    }
-  },
+
   setup() {
     const {
       mounted,

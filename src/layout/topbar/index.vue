@@ -2,7 +2,6 @@
 import {
   defineComponent,
   ref,
-  reactive,
   watch,
   computed,
   watchEffect,
@@ -84,9 +83,7 @@ export default defineComponent({
       type="primary"
       icon="el-icon-menu"
     ></el-button>
-    <el-button type="primary">
-      <i class="el-icon-menu"></i> <span>Golove</span></el-button
-    >
+
     <el-menu
       :default-active="activeMenuIndex"
       class="el-menu-demo"
@@ -128,7 +125,7 @@ export default defineComponent({
   width: 100%;
   height: 60px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #449dfc;
   .el-menu {
     min-width: 300px;

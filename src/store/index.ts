@@ -1,7 +1,7 @@
 // store.ts
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
-
+import axios from '../axios'
 
 
 interface userInfo {
@@ -65,6 +65,9 @@ export const store = createStore<State>({
     search(state, data: string) {
       state.inputValue = data
     },
+    setSlideValue(state,data){
+      state.slideValue = data
+    },
     changeCollapse(state) {
       state.collapseflag = !state.collapseflag 
     },
@@ -80,9 +83,18 @@ export const store = createStore<State>({
       localStorage.setItem('username', data)
       state.user.username = data
     },
+    SAVE_PERSON: (state, data: Array<userInfo>) => {
+      state.personalCards = data
+    }
   },
   actions: {
+    getPerson(context) {
+      axios.getPerson({})
+        .then((res: any) => {
+          context.commit('SAVE_PERSON', res.data.result)
+        })
 
+    }
   }
 })
 

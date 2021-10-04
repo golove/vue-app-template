@@ -1,9 +1,8 @@
-
 <template>
   <div
     id="homeLineCharts"
-    :class="className"
-    :style="{height: height, width: width}"
+    :class="'chart'"
+    :style="{height: '350px', width: '100%'}"
   />
 </template>
 
@@ -19,20 +18,7 @@ export interface LineChartData {
 
 export default defineComponent({
   props: {
-    className: {
-      type: String,
-      default: 'chart'
-    },
-    width: {
-      type: String,
-      default: '100%',
-      required: true
-    },
-    height: {
-      type: String,
-      default: '350px',
-      required: true
-    },
+    
     chartData: {
       type: Object as PropType<LineChartData>,
       required: true
@@ -110,7 +96,7 @@ export default defineComponent({
               }
             },
             data: chartData.actualData,
-            animationDuration: 2800,
+            animationDuration: 280,
             animationEasing: 'quadraticOut'
           }]
         } as EChartsOption)
